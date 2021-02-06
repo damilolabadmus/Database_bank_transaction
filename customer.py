@@ -1,5 +1,4 @@
-import bank_transaction
-import *
+from bank_transaction import *
 from mysql.connector import Error
 
 
@@ -7,16 +6,16 @@ def create_table():
     connection = connect()
     db_cursor = connection.cursor()
 
-    sql_create_customer = "CREATE TABLE if not exists customer (" \
-                          "customer_id INTEGER NOT NULL auto_increment," \
-                          "first_name VARCHAR (30) NOT NULL," \
-                          "last_name VARCHAR(30) NOT NULL," \
-                          "middle_name VARCHAR(30) NOT NULL," \
-                          "mobile_number VARCHAR(10) NOT NULL," \
-                          "occupation VARCHAR(10) NOT NULL," \
-                          "date_of_birth DATE," \
-                          "CONSTRAINT customer_pk PRIMARY KEY(customer_id)" \
-                          ")"
+    create_sql= "CREATE TABLE if not exists customer (" \
+                "customer_id INTEGER NOT NULL auto_increment," \
+                "first_name VARCHAR (30) NOT NULL," \
+                "last_name VARCHAR(30) NOT NULL," \
+                "middle_name VARCHAR(30) NOT NULL," \
+                "mobile_number VARCHAR(10) NOT NULL," \
+                "occupation VARCHAR(10) NOT NULL," \
+                "date_of_birth DATE," \
+                "CONSTRAINT customer_pk PRIMARY KEY(customer_id)" \
+                ")"
     try:
         db_cursor.execute(create_sql)
         connection.commit()

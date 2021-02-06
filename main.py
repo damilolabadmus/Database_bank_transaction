@@ -84,13 +84,13 @@ def run_banking_application():
         elif option == 2:
             print_records(fetch_all_from_table("account"))
         elif option == 3:
-            print_records(fetch_all_from_table("transaction_detail"))
+            print_records(fetch_all_from_table("transaction_details"))
         elif option == 4:
             insert_into_table("customer", get_customer_input_details())
         elif option == 5:
             insert_into_table("account", get_account_input_details())
         elif option == 6:
-            insert_into_table("transaction_detail", get_transaction_input_details())
+            insert_into_table("transaction_details", get_transaction_input_details())
         elif option == 7:
             update_in_table("customer", get_customer_input_details(take_id=True))
         elif option == 8:

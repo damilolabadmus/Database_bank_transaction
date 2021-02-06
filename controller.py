@@ -7,7 +7,7 @@ import transaction_table
 
 def create_tables_if_not_exists():
     customer.create_table()
-    account.create_table()
+    account.create_account_table()
     transaction_table.create_table()
 
 

@@ -14,9 +14,15 @@ def connect():
             user='damilicious',
             password='Atilola0672')
 
-        print("Connected to the database")
+        # print("Connected to the database")
     except Error as e:
         print('Not connecting: ', e)
     finally:
         if conn is not None and conn.is_connected():
             return conn
+
+
+def close(connection):
+    connection.close()
+
+

@@ -81,8 +81,8 @@ def fetch_all():
 
     try:
         db_cursor.execute(insert_sql)
-        print(db_cursor.rowcount, "rows have been fetched successfully")
         accounts = db_cursor.fetchall()
+        print(db_cursor.rowcount, "rows have been fetched successfully")
         db_cursor.close()
     except Error as error:
         print("Error fetching rows:", error)
